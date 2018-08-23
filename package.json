@@ -1,0 +1,19 @@
+{
+  "name": "rebbitmq-multiple-queues",
+  "version": "1.0.0",
+  "description": "Managing multiple message queues in Webhook with RabbitMQ in Node JS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Hemil96@github.com/Hemil96/rebbitmq-multiple-queues.git"
+  },
+  "author": "Hemil96",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hemil96/rebbitmq-multiple-queues/issues"
+  },
+  "homepage": "https://github.com/Hemil96/rebbitmq-multiple-queues#readme"
+}

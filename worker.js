@@ -1,10 +1,19 @@
 const amqp = require('amqplib/callback_api');
 
 amqp.connect('amqp://localhost', (err, conn) => {
+  if (err) {
+    console.log(err);
+    return err
+  }
   conn.createChannel((err, channel) => {
-    const q = 'hello'; // declaring the queue from which we are going to consume
+    if (err) {
+      console.log(err);
+      return err
+    }
+    const q = 'task_queue'; // declaring the queue from which we are going to consume
 
-    channel.assertQueue(q, {durable: false});
+    channel.assertQueue(q, {durable: true});
+    channel.prefetch(1);
     console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", q);
 
     // Listening to the messages
@@ -16,8 +25,9 @@ amqp.connect('amqp://localhost', (err, conn) => {
       // we are using setTimeout to fake the time taken by process
       setTimeout(() => {
         console.log(" [x] Done");
+        // sending ack back after getting done
+        channel.ack(msg);
       }, secs * 1000);
-    }, {noAck: true});
-    
+    }, {noAck: false});
   });
 });

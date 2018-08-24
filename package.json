@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Hemil96/rebbitmq-multiple-queues/issues"
   },
-  "homepage": "https://github.com/Hemil96/rebbitmq-multiple-queues#readme"
+  "homepage": "https://github.com/Hemil96/rebbitmq-multiple-queues#readme",
+  "dependencies": {
+    "amqplib": "^0.5.2"
+  }
 }
